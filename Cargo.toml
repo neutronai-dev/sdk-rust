@@ -1,0 +1,26 @@
+[package]
+name = "neutron-ai"
+version = "0.3.0"
+edition = "2024"
+rust-version = "1.85"
+license = "Apache-2.0"
+description = "Rust SDK for Neutron AI memory and MCP operations."
+repository = "https://github.com/neutronai-dev/sdk-rust"
+homepage = "https://neutronai.dev"
+documentation = "https://docs.rs/neutron-ai"
+readme = "README.md"
+keywords = ["neutron-ai", "memory", "mcp", "agents"]
+categories = ["api-bindings", "web-programming::http-client"]
+
+[lib]
+name = "neutron_ai"
+path = "src/lib.rs"
+
+[dependencies]
+reqwest = { version = "0.13.4", default-features = false, features = ["json", "rustls"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "2.0"
+
+[dev-dependencies]
+tokio = { version = "1.53", features = ["macros", "rt-multi-thread"] }
